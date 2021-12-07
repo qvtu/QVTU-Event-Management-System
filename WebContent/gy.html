@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>欢迎登录-泉大赛事</title>
+<link rel="stylesheet" href="layui/css/layui.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-logo layui-hide-xs layui-bg-black">泉大赛事后台管理系统</div>
+			<!-- 头部区域（可配合layui 已有的水平导航） -->
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item layui-hide layui-show-md-inline-block">
+					<a href="javascript:;"> <img src="img/headimg.jpg"
+						class="layui-nav-img"> 欢迎你
+				</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="main.html">主页</a>
+						</dd>
+						<dd>
+							<a href="sz.html">设置</a>
+						</dd>
+						<dd>
+							<a href="login.html" nclick="out()">退出</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+					<a href="javascript:;"> <i
+						class="layui-icon layui-icon-more-vertical"></i>
+				</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+				<ul class="layui-nav layui-nav-tree" lay-filter="test">
+					<li class="layui-nav-item layui-nav-itemed"><a class=""
+						href="javascript:;">菜单管理</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="main.html">首页</a>
+							</dd>
+							<dd>
+								<a href="gg.html">公告</a>
+							</dd>
+							<dd>
+								<a href="show.html">赛事展示</a>
+							</dd>
+							<dd>
+								<a href="xg.html">赛事管理</a>
+							</dd>
+						</dl></li>
+					<li class="layui-nav-item layui-nav-itemed"><a
+						href="javascript:;">用户管理</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="tjzh.html">添加账户</a>
+							</dd>
+							<dd>
+								<a href="zhsz.html">账号设置</a>
+							</dd>
+						</dl></li>
+					<li class="layui-nav-item"><a href="sz.html">设置</a></li>
+					<li class="layui-nav-item"><a href="gy.html">关于</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="layui-body">
+			<!-- 内容主体区域 -->
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 30px;">
+				<legend>泉大赛事 - 更新日志</legend>
+			</fieldset>
+			<ul class="layui-timeline">
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">置顶</h3>
+						<p>
+							泉大赛事。 <br>因小而大，因弱而强。 <br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i
+								class="layui-icon"></i>
+						</p>
+					</div></li>
+
+				<!--            <li class="layui-timeline-item">-->
+				<!--                <i class="layui-icon layui-timeline-axis"></i>-->
+				<!--                <div class="layui-timeline-content layui-text">-->
+				<!--                    <h3 class="layui-timeline-title">6月xx日</h3>-->
+				<!--                    <p>-->
+				<!--                        xxxxxx-->
+				<!--                        <br>xx-->
+				<!--                        <br>xx-->
+				<!--                        <br>xx-->
+				<!--                    </p>-->
+				<!--                </div>-->
+				<!--            </li>-->
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">7月1日</h3>
+						<p>
+							更新了一些功能： <br>添加了不同情况下网页对用户权限的判断
+						</p>
+					</div></li>
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月30日</h3>
+						<p>
+							发现了一些问题： <br>没有判断用户权限
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月29日</h3>
+						<p>
+							无事发生 <br>休息一天
+						</p>
+					</div></li>
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月28日</h3>
+						<p>
+							更新了一些功能： <br>发布了本站公告 <br>添加了查看用户列表的功能 <br>添加了用户添加、修改和删除的功能
+							<br>添加了用户修改密码的功能 <br>项目基本完成
+						</p>
+					</div></li>
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月27日</h3>
+						<p>
+							更新了一些功能： <br>添加了favicon图标 <br>添加了展示页面的修改和删除
+						</p>
+						<p>
+							修复了一些问题： <br>修复了赛事查询表格不显示的bug
+						</p>
+					</div></li>
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月26日</h3>
+						<p>
+							修复了一些问题： <br>修复了弹出层不弹出的bug <br>修复了图标显示不全的bug <br>修复了前端传入空串的bug
+						</p>
+					</div></li>
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月25日</h3>
+						<p>
+							更新了一些功能： <br>添加了可以调用日历选择日期的功能
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月24日</h3>
+						<p>
+							更新了一些功能： <br>添加了赛事管理页面赛事添加、修改、查询和删除的功能
+						</p>
+						<p>
+							Ps: <br>修改了前端登录页面 <br>还有一些小问题
+						</p>
+					</div></li>
+
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月23日</h3>
+						<p>
+							更新了一些功能： <br>添加了用户注册和查看赛事的功能
+						</p>
+						<p>
+							Ps： <br>修改前端的页面代码 <br>学习layui框架 <br>学习JS <br>晚上再写几个功能
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月22日</h3>
+						<p>
+							更新了一些功能： <br>添加了用户登录的功能
+						</p>
+						<p>
+							Ps： <br>晚上想想明天写什么
+						</p>
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月21日</h3>
+						<p>
+							Ps： <br>还是没想好做什么 <br>实在不行先写个前端好了 <br>把基本功能写出来 <br>不行到时候再改
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月20日</h3>
+						<p>
+							Ps： <br>先写一写前端页面 <br>不知道选哪一种风格
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<h3 class="layui-timeline-title">6月19日</h3>
+						<p>
+							Ps： <br>开始准备JavaWeb项目还没想好做什么 <br>博客赛事管理... <br>校园赛事管理...
+							<br>待定.....
+						</p>
+					</div></li>
+				<li class="layui-timeline-item"><i
+					class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
+					<div class="layui-timeline-content layui-text">
+						<div class="layui-timeline-title">过去</div>
+						<br> <br>
+					</div></li>
+			</ul>
+		</div>
+
+		<div class="layui-footer">
+			<!-- 底部固定区域 -->
+			<div class="layui-row">
+				<div class="layui-col-md4">泉大赛事 - 人无远虑，必有近忧。</div>
+				<div class="layui-col-md2 layui-col-md-offset6" id="nowTime">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script>
+		//JS
+		setInterval(
+				"document.all.nowTime.innerHTML=new Date().toLocaleString()",
+				1000);
+		layui
+				.use(
+						[ 'element', 'layer', 'util' ],
+						function() {
+							var element = layui.element, layer = layui.layer, util = layui.util, $ = layui.$;
+
+							//头部事件
+							util
+									.event(
+											'lay-header-event',
+											{
+												//左侧菜单事件
+												menuLeft : function(othis) {
+													layer.msg('展开左侧菜单的操作', {
+														icon : 0
+													});
+												},
+												menuRight : function() {
+													layer
+															.open({
+																type : 1,
+																content : '<div style="padding: 15px;">.......</div>',
+																area : [
+																		'260px',
+																		'100%' ],
+																offset : 'rt' //右上角
+																,
+																anim : 5,
+																shadeClose : true
+															});
+												}
+											});
+						});
+	</script>
+</body>
+</html>

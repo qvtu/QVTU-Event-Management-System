@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>欢迎登录-泉大赛事</title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/zhsz.js"></script>
+<body onload="loadUser()">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo layui-hide-xs layui-bg-black">泉大赛事后台管理系统</div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+                <a href="javascript:;">
+                    <img src="img/headimg.jpg"
+                         class="layui-nav-img">
+                    欢迎你
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="main.html">主页</a></dd>
+                    <dd><a href="sz.html">设置</a></dd>
+                    <dd><a href="login.html" onclick="out()">退出</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                <a href="javascript:;">
+                    <i class="layui-icon layui-icon-more-vertical"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">菜单管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="main.html">首页</a></dd>
+                        <dd><a href="gg.html">公告</a></dd>
+                        <dd><a href="show.html">赛事展示</a></dd>
+                        <dd><a href="xg.html">赛事管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="tjzh.html">添加账户</a></dd>
+                        <dd><a href="zhsz.html">账号设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="sz.html">设置</a></li>
+                <li class="layui-nav-item"><a href="gy.html">关于</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="width: auto; margin: 0;">
+            <button type="button" class="layui-btn layui-btn-fluid layui-bg-red"
+                    onclick="loadUser()">用户列表
+            </button>
+        </div>
+
+        <table cellSpacing="1px" class="layui-table"id="tableUser">
+            <thead>
+            <tr>
+                <th style="width: 60px;text-align: center">序号</th>
+                <th style="width: 120px;text-align: center">账户</th>
+                <th style="width: 120px;text-align: center">积分</th>
+                <th style="width: 120px;text-align: center">权限</th>
+                <th style="width: 120px;text-align: center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr flag="trUser" style="display: none;">
+                <td style="text-align: center">11</td>
+                <td style="text-align: center">22</td>
+                <td style="text-align: center">33</td>
+                <td style="text-align: center">44</td>
+                <td style="text-align: center" class="operate">
+                    <a class="layui-btn layui-btn-xs" onclick="xgUser(this)">修改</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" onclick="deteleUser(this)">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="msgDiv"></div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                泉大赛事 - 人无远虑，必有近忧。
+            </div>
+            <div class="layui-col-md2 layui-col-md-offset6" id="nowTime">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="layui/layui.js"></script>
+
+<script>
+    //JS
+    setInterval("document.all.nowTime.innerHTML=new Date().toLocaleString()", 1000);
+    layui.use(['element', 'layer', 'util'], function () {
+        var element = layui.element
+            , layer = layui.layer
+            , util = layui.util
+            , $ = layui.$;
+
+        //头部事件
+        util.event('lay-header-event', {
+            //左侧菜单事件
+            menuLeft: function (othis) {
+                layer.msg('展开左侧菜单的操作', {icon: 0});
+            }
+            , menuRight: function () {
+                layer.open({
+                    type: 1
+                    , content: '<div style="padding: 15px;">.......</div>'
+                    , area: ['260px', '100%']
+                    , offset: 'rt' //右上角
+                    , anim: 5
+                    , shadeClose: true
+                    , isPreview: true
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

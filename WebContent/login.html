@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>泉大赛事</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="favicon.ico" rel="layui-icon-face-smile">
+</head>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/login.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script src="layui/layui.js"></script>
+<body>
+<main>
+    <form class="form">
+        <div class="form__cover"></div>
+        <div class="form__loader">
+            <div class="spinner active">
+                <svg class="spinner__circular" viewBox="25 25 50 50">
+                    <circle class="spinner__path" cx="50" cy="50" r="20" fill="none" stroke-width="4"
+                            stroke-miterlimit="10"></circle>
+                </svg>
+            </div>
+        </div>
+        <div class="form__content">
+            <h1>Authorization</h1>
+            <div class="styled-input">
+                <input type="text" class="styled-input__input" id="userName">
+                <div class="styled-input__placeholder"><span class="styled-input__placeholder-text">Username</span>
+                </div>
+                <div class="styled-input__circle"></div>
+            </div>
+            <div class="styled-input">
+                <input type="password" class="styled-input__input" id="userPSW">
+                <div class="styled-input__placeholder"><span class="styled-input__placeholder-text">Password</span>
+                </div>
+                <div class="styled-input__circle"></div>
+            </div>
+            <button type="button" class="styled-button" onclick="login()" onkeydown="if(event.keyCode===13) document.all.login.click()"><span class="styled-button__real-text-holder"> <span
+                    class="styled-button__real-text">Login</span> <span class="styled-button__moving-block face"> <span
+                    class="styled-button__text-holder"> <span
+                    class="styled-button__text">Login</span> </span> </span><span
+                    class="styled-button__moving-block back"> <span class="styled-button__text-holder"> <span
+                    class="styled-button__text">Login</span> </span> </span> </span></button>
+            <button type="button" class="styled-button" onclick="Register()"><span
+                    class="styled-button__real-text-holder"> <span
+                    class="styled-button__real-text">Register</span> <span
+                    class="styled-button__moving-block face"> <span
+                    class="styled-button__text-holder"> <span
+                    class="styled-button__text">Register</span> </span> </span><span
+                    class="styled-button__moving-block back"> <span class="styled-button__text-holder"> <span
+                    class="styled-button__text">Register</span> </span> </span> </span></button>
+        </div>
+    </form>
+</main>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

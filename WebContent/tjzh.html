@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>欢迎登录-泉大赛事</title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/tjzh.js"></script>
+<body onload="qxpd1()">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo layui-hide-xs layui-bg-black">泉大赛事后台管理系统</div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+                <a href="javascript:;">
+                    <img src="img/headimg.jpg"
+                         class="layui-nav-img">
+                    欢迎你
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="main.html">主页</a></dd>
+                    <dd><a href="sz.html">设置</a></dd>
+                    <dd><a href="login.html" onclick="out()">退出</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                <a href="javascript:;">
+                    <i class="layui-icon layui-icon-more-vertical"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">菜单管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="main.html">首页</a></dd>
+                        <dd><a href="gg.html">公告</a></dd>
+                        <dd><a href="show.html">赛事展示</a></dd>
+                        <dd><a href="xg.html">赛事管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="tjzh.html">添加账户</a></dd>
+                        <dd><a href="zhsz.html">账号设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="sz.html">设置</a></li>
+                <li class="layui-nav-item"><a href="gy.html">关于</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="layui-tab layui-tab-card">
+            <ul class="layui-tab-title">
+                <li class="layui-this">添加账户</li>
+            </ul>
+            <div class="layui-tab-content" style="height: auto;">
+                <div class="layui-tab-item layui-show">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名：</label>
+                            <div class="layui-input-block">
+                                <input id="addUserName" type="text" name="title" required lay-verify="required"
+                                       placeholder="请输入用户名"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">密码：</label>
+                            <div class="layui-input-block">
+                                <input id="addUserPSW" type="text" name="title" required lay-verify="required"
+                                       placeholder="请输入密码"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">初始积分：</label>
+                            <div class="layui-input-block">
+                                <input id="addUserTotal" type="text" name="title" required lay-verify="required"
+                                       placeholder="请输入初始积分"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">权限等级：</label>
+                            <div class="layui-input-block">
+                                <select id="addUserType" name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="1">管理员</option>
+                                    <option value="2">普通用户</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button type="button" class="layui-btn" lay-submit lay-filter="formDemo"
+                                        onclick="addUser()">立即提交
+                                </button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="msgDiv"></div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        <div class="layui-row">
+            <div class="layui-col-md4">
+                泉大赛事 - 人无远虑，必有近忧。
+            </div>
+            <div class="layui-col-md2 layui-col-md-offset6" id="nowTime">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script>
+    //JS
+    setInterval("document.all.nowTime.innerHTML=new Date().toLocaleString()", 1000);
+    layui.use(['element', 'layer', 'util'], function () {
+        var element = layui.element
+            , layer = layui.layer
+            , util = layui.util
+            , $ = layui.$;
+
+        //头部事件
+        util.event('lay-header-event', {
+            //左侧菜单事件
+            menuLeft: function (othis) {
+                layer.msg('展开左侧菜单的操作', {icon: 0});
+            }
+            , menuRight: function () {
+                layer.open({
+                    type: 1
+                    , content: '<div style="padding: 15px;">.......</div>'
+                    , area: ['260px', '100%']
+                    , offset: 'rt' //右上角
+                    , anim: 5
+                    , shadeClose: true
+                    , isPreview: true
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
